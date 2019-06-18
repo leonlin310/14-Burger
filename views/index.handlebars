@@ -34,11 +34,16 @@
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
+
+  <div class="form-group" id = "hideDiv">
     <label for="slee">Eaten?</label><br>
-    <input type="radio" name="eaten" value="1" checked> Eaten!<br>
-    <input type="radio" name="eaten" value="0"> NotEaten
+    <input type="radio" name="eaten" value="0" checked> Eaten!<br>
+    <input type="radio" name="eaten" value="1"> NotEaten
   </div>
 
   <button type="submit">Add Burger</button>
 </form>
+
+<script>
+  $("#hideDiv").hide();
+</script>
