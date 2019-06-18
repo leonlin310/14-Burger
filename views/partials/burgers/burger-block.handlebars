@@ -9,8 +9,8 @@
 		
 		{{else}}
 		Regurtitate Burger!
-	
-		<button class="delete-eat" data-id="{{id}}" data-neweat="{{eat}}">
+	<br>
+		<button class="delete-burger" data-id="{{id}}" data-neweat="{{eat}}">
 		
 		Digest this Burger
 
@@ -18,3 +18,22 @@
 		{{/if}}
 	</button>
 </li>
+
+<script type="text/javascript">
+
+    $(".delete-burger").on("click", function(event) {
+        var id = $(this).data("id");
+    
+        // Send the DELETE request using ajax.
+        $.ajax("/api/burgers/" + id, {
+          type: "DELETE",
+        }).then(
+          function() {
+            console.log("deleted burger", id);
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
+</script>
+  
